@@ -13,15 +13,15 @@ FUNCIONES PARA LA TRAMA DE MODBUS
 
 CONEXION USANDO EL SERIAL1 
 
-#### R0->RX1
+#### R0->RX2
 
 #### RE->D2
 
 #### DE->D2
 
-#### DI->TX1
+#### DI->TX2
 
-![schematic1](https://user-images.githubusercontent.com/60046999/151057889-2bdd6713-3509-4b3c-bdde-0428be71959a.png)
+![schematic_esp32](https://user-images.githubusercontent.com/60046999/152456149-ee4d2c8b-a275-4fad-ba49-d656b52d650b.png)
 
 ## DE-RE PIN DIGITAL
 ```
@@ -58,11 +58,11 @@ int Modbus_Read_function(uint8_t address2,uint16_t reg2);
 uint8_t  address=  0x02;///
 uint16_t reg=      1219;
 uint16_t msg=      0x01;/
-int TX =2;
+int TX_pin =2;
 void setup() {
   Serial.begin(9600);
-  SerialModbus_initialize(ModbusSerial1,baudrate);
-  pinMode(TX,OUTPUT);
+  SerialModbus_initialize(ModbusSerial2,baudrate);
+  pinMode(TX_pin,OUTPUT);
   //unica vez de escritura 
   Modbus_Write_function(address_write,reg_write,msg_write);
   delay(2000);
