@@ -120,9 +120,9 @@ void Modbus_transmision_trama(uint8_t address_,uint8_t funcion_,uint16_t reg_,ui
   //CRC
   Serial2.write(CRC_intHI_);
   Serial2.write(CRC_int);
-  regHI_=0;//
+  //regHI_=0;//
   msgHI_=0;
-  CRC_intHI_=0;//
+  //CRC_intHI_=0;//
   delay(6);//NO BORRAR
   digitalWrite(TX_pin,0);//lectura  
 }
